@@ -14,19 +14,19 @@ public class Registration {
     public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter username:");
+        System.out.println("Nazwa użytkownika:");
         String username = scanner.nextLine();
 
-        System.out.println("Enter password:");
+        System.out.println("Wprowadź hasło:");
         String password = scanner.nextLine();
 
         // Sprawdzenie czy hasło spełnia określone wymagania (np. długość)
         if (password.length() < 8) {
-            System.out.println("Error: Password must be at least 8 characters long.");
+            System.out.println("Hasło musi zawierać min. 8 znaków");
             return;
         }
 
-        System.out.println("Enter email:");
+        System.out.println("Wprowadź e-mail:");
         String email = scanner.nextLine();
 
         // Sprawdzenie poprawności adresu e-mail
@@ -34,7 +34,7 @@ public class Registration {
         Pattern pat = Pattern.compile(emailRegex);
         Matcher matcher = pat.matcher(email);
         if (!matcher.matches()) {
-            System.out.println("Error: Invalid email address.");
+            System.out.println("Niepoprawny adres e-mail");
             return;
         }
 
